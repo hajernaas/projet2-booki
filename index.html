@@ -1,32 +1,46 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html>     <!-- indiquer qu'il s'agit d'une page HTML. -->
+<html lang="fr">    <!-- indiquer la langue du contenu -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- indiquer l'encodage utilisé dans le fichier -->
+    <meta charset="UTF-8">  
+     <!-- indiquer comment le navigateur doit afficher la page sur différents appareils. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Booki</title>
+    <!-- insérer des icones en utilisant la librairie Font Awesome-->
+    <script src="https://kit.fontawesome.com/af057d8543.js" crossorigin="anonymous"></script>
+   <!-- importer des variantes de la police Raleway depuis Google Fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- indique le chemin vers la feuille de style grâce à l'attribut href  -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- indique l'icone du site en format svg -->
+    <link rel="icon" type="image/svg+xml" href="images/logo/Logo.svg"> 
 </head>
 
 <body>
+
     <div class="main-container">
+        <!-- Entête de la page -->
         <header>
+            <!-- Logo su site --> 
             <div id="container-logo">
-               <img src="./images/logo/Booki.png" title=" Logo Booki" alt="Logo Agence Booki" >
+               <!-- <img src="./images/logo/Booki.png" title=" Logo Booki" alt="Logo Agence Booki" > -->
+                  <img src="images/logo/Logo.svg" alt="Logo Agence Booki">
             </div>
+
+            <!-- Menu de navigation -->
             <nav>
                 <ul class="menu">
-                    <li class="menu-hebergement"><a href="#container-hebergements">Hébergements</a></li>
-                    <li class="menu-activite"><a href="#container-activites">Activités</a></li>
+                    <li><a href="#container-hebergements">Hébergements</a></li>
+                    <li><a href="#container-activites">Activités</a></li>
                 </ul>
             </nav>
         </header>
+
+
+
 
 
 
@@ -99,10 +113,6 @@
             <div class="activites-marseille"  id="container-activites">
 
             </div>
-
-
-
-
         </main>
         <footer></footer>
     </div>

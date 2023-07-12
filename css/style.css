@@ -1,13 +1,35 @@
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
-    
+   
 }
 
 :root {
+    /*color*/
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
+    --black:#000000;
+    --white:#FFFFFF;
+    --grey:#D9D9D9;
+
+    /*text configuration*/
+    
+    --body-font:'Raleway';
+    --header-font:'Raleway';
+     /*font-weight */
+    --fat-value1-font-weight:700;
+    --fat-value2-font-weight:400;
+     /* font-size */
+    --text-size1-font-size:0.9em;
+    --text-size2-font-size:1em;
+    --text-size3-font-size:1.1em;
+    --text-size4-font-size:1.375em;
+    /* line-height */
+    --line-height:normal;
+    /* font-style */
+    --font-style:normal;
+
 }
 
 .fa-solid {
@@ -65,61 +87,45 @@ header{
      justify-content:space-between;
 }
 
-nav{
-    display:flex;
-    align-items:center;
-}
-    
-nav ul{
-    display:flex;
-    
-}
-
-nav li{
-    list-style-type:none; 
-    padding: 0 25px;
-
-}
-/*
-li.menu-hebergement , li.menu-activite
- {
-   
-    text-align: center;
-    padding-top: 40px;
-   
-}*/
 #container-logo{
- padding:30px;   
+    padding:30px;   
 }
 #container-logo img{
     width: 61.09px;
     height: 19px;
 }
 
-a{ 
-    text-decoration: none;
-    color:black;
+nav{
+    display:flex;
+    align-items:center;
+  
+}
+    
+nav ul{
+    display:flex;    
 }
 
-nav a:hover{
-    color: var(--main-bg-color);
-    border-top: 2px solid #0065FC;
+nav ul li{
+    list-style-type:none; 
+    padding: 0 25px;
+
 }
-/*
-li.menu-hebergement:hover a, li.menu-activite:hover a, li.menu-hebergement:focus a, li.menu-activite:focus a, li.menu-hebergement:active a, li.menu-activite:active a{
-    color: #0065FC; 
-}  
-li.menu-hebergement:hover, li.menu-activite:hover, li.menu-hebergement:focus, li.menu-activite:focus, li.menu-hebergement:active, li.menu-activite:active{
-    color: #0065FC; 
-    color: var(--blue, #0065FC);
-    color: var(--main-bg-color);
-    border-top: 2px solid #0065FC;
-     
-}*/
-/*
-ul.menu:hover{
-    font-weight: 400 ;
-}*/
+
+.menu a{ 
+    text-decoration: none;
+    color:black;
+    font-weight:var(--fat-value2-font-weight);  
+    font-size:var(--text-size2-font-size) ;
+    font-style:var(--font-style); 
+}
+
+.menu a:hover{
+    color: var(--main-color); 
+    border-top: 2px solid #0065FC; 
+    padding-top:38px;
+}
+
+
 
 
 
