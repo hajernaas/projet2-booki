@@ -347,7 +347,6 @@ permet d'agencer ces éléments en colonne*/
 }
 
 /****** Populaires ***********/
-
 .most-popular  {
     width: 32%;
 }
@@ -357,7 +356,6 @@ permet d'agencer ces éléments en colonne*/
     justify-content:space-between;
     align-items:center;
 }
-
 
 .most-popular-cards .card {
     display: flex;
@@ -556,8 +554,7 @@ permet d'agencer ces éléments en colonne*/
     }
 
     .activities-marseille-container  .card {
-        height:270px; 
-       
+        height:270px;       
     } 
        
    }
@@ -619,7 +616,7 @@ permet d'agencer ces éléments en colonne*/
     } 
 
 /*****filtres*******/
-/*
+
 @media screen and (max-width: 637.5px) {
 
     .filters-container h2{
@@ -631,7 +628,7 @@ permet d'agencer ces éléments en colonne*/
          
     }
 }
-*/
+
     .filters-menu{
         flex-direction: row;
         flex-wrap: wrap;
@@ -701,7 +698,7 @@ permet d'agencer ces éléments en colonne*/
 
     .footer-column{
         width:100%;
-        margin-bottom: -30px; 
+        margin-bottom: -20px; 
     }
 
 }
