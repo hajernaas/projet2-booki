@@ -33,19 +33,18 @@ body {
     justify-content: center;  
 }
 
+/****div de body***/
 .main-container {
     width: 100%;
-    max-width: 1440px; /*le contenu doit se limiter à 1440 px de large.*/
-    min-width: 320px;  /*La largeur minimum est fixée à 320 px, en-deçà de cette largeur, le comportement n’est 
-    pas garanti.*/
+    max-width: 1440px;  
+    min-width: 320px;  
     padding: 0 50px;
     box-sizing: border-box;/*indique au navigateur de prendre en compte la bordure et 
     le remplissage dans la valeur définie pour la largeur et la hauteur*/
 }
 
 main {
-    /*Marge extérieur qui sépare entre le header et le main*/
-	margin-top:30px; 
+	margin-top:30px; /*Marge extérieur qui sépare entre le header et le main*/
 }
 
 .section-title {
@@ -58,44 +57,46 @@ main {
     background-color: white;
     border-radius: 20px;
     padding: 5px;
+    /*permet d'appliquer une ombre portée 
+    sur une image*/
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1)); 
-}    
+}
 
 .card img {
-    /*l’image devrait être déformée une fois dimensionnée alors la propriété CSS
-object-fit permettra de corriger cela.*/
+    /* l'image est dimensionné pour remplir
+    toute la zone de contenu de son conteneur
+    tout en gardant son rapport hauteur/largeur*/
     object-fit: cover;
 }
 
 .card-title {
-    font-size: 16px;      
+    font-size: 16px;  
 }
 
 .euro {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 12px;    
 }
 
  .neutralStar {
-    color: var(--main-bg-color) ;     
+    color: var(--main-bg-color) ; 
 } 
 
 a{
-    text-decoration:none;/* supprimer le trait positionné sous le lien*/
-    color:var(--black);  
+    text-decoration: none;
+    color:black;
 }
 
 footer{
     background-color: var(--main-bg-color);
-    margin-top:35px;
-    padding-bottom:30px;
+    margin-top: 35px;
+  
 }
-
 
 /*******Entête du site(Logo + Menu de navigation)******/
 header{
     display:flex;
-    justify-content:space-between;
+    justify-content:space-between; 
 }
 
 #logo-container{
@@ -105,7 +106,9 @@ header{
 #logo-container img{
     width: 61.09px;
     height: 19px;
-    margin-left:-35px; 
+    /* pour corriger le déclage du logo par 
+    rapport au titre */
+    margin-left:-30px; 
 }
 
 nav{
@@ -113,9 +116,9 @@ nav{
     align-items:center;
 }
 
-nav ul{
-    display:flex;
-    list-style-type:none;    
+nav ul {
+    display:flex;  
+    list-style-type:none; 
 }
 
 .menu li{
@@ -128,41 +131,44 @@ nav ul{
 }
 
 .menu a:hover{
-    /* la bordure bleue qui s’affiche au survol. */
     color: var(--main-color); 
-    border-top: 2px solid #0065FC; 
-    padding-top:38px;
+    border-top: 2px solid #0065FC;  
+    padding-top:38px; 
 }
 
-/*****************Recherche *************/
+/*********Recherche ***********/
 
 .title-container h1{
-     font-weight:700;
-     font-size:22px;
-     margin-bottom:0px;  
+    font-weight:700;
+    font-size:22px;
+    margin-bottom:8px;   
 }
 
 .title-container p{
      font-weight:400;
      font-size:16px;
-     margin-top:3px; 
      margin-bottom:35px;
 }
 
 .research-form form{
-    /*mettre tous les éléments du formulaire en flex */
     display:flex ;
-    height:49px;  
+    align-items: center;
+    height:49px; 
+    margin-bottom: 35px; 
 }
 
+
 .research-input{
-    width:210px;
+    width:210px; 
     padding:15px 24px 15px 24px;
-    border: solid 1px var(--grey, #F2F2F2); 
+    border: solid 1px var(--grey, #F2F2F2);
     border-left: 0px;
+    /* color:var(--black); */
     font-weight: 700;
     font-size: 18px;
-    outline: none; /*Pour supprimer le contour d'un élément lors de sa prise de focus*/
+    /*Pour supprimer le contour d'un élément
+     lors de sa prise de focus*/
+    outline: none; 
 }
 
 .icon-location {
@@ -170,108 +176,107 @@ nav ul{
     border: 2px solid #F2F2F2;
     background-color: #F2F2F2;
     padding: 15px;
-    border-radius:15px 0px 0px 15px; /* définir des coins arrondis pour la bordure d'un élément.
-    coin en haut à gauche ,coin en bas à gauche*/
-  
+    border-radius:15px 0px 0px 15px; 
 }
 
 .icon-location i{
-    color:var(--black,#000000); /***pour changer couleur de l'icone***/
+    color:var(--black);
 }
 
 .research-button{
-    background-color: var(--main-color);/*le changement de couleur de fond*/
+    background-color: var(--main-color);
     color:var(--white); 
     width: 132px;
-    border: 0px solid #F2F2F2; /*définir les propriétés liées à la bordure*/
+    border: 0px solid #F2F2F2;
     border-radius: 0px 15px 15px 0px;
     padding: 15px 16px;
     font-weight:700;
     font-size: 18px;
 }
-
 .res-button-magnifying-glass{
     display: none;
 }
-/****Changer la couleur d'un input text de l'attribut placeholder en CSS ****/
-#search-input::-webkit-input-placeholder /* WebKit, Blink, Edge */
-{ 
+
+/****Changer la couleur d'un input texte de l'attribut placeholder en CSS ****/
+/*
+#search-input::placeholder {
+    color:var(--black, #000);
+    opacity: 1;
+}
+*/
+#search-input::-webkit-input-placeholder{ /* WebKit, Blink, Edge */ 
     color:var(--black, #000);
 }
-#search-input::-moz-placeholder /* Mozilla Firefox à partir de la version 19 */
-{
+#search-input::-moz-placeholder{ /* Mozilla Firefox à partir de la version 19 */
     color:var(--black, #000);
-    opacity: 1;/*permet de modifier la transparence de l'image. */
+    opacity: 1;/*permet de modifier la transparence de l'image*/
 }
-#search-input:-ms-input-placeholder /* Internet Explorer 10-11 */
-{
+#search-input:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     color:var(--black, #000);
 }
 
 
-/**Filtres**/
-
+/**************************Filtres******************************/
 .filters-container{
-    /** on applique flex sur les filtres pour placer les blocs côte à côte
- et aligne les éléments verticalment(align-items), la largeur totale de ce bloc est de 100% **/
     display:flex;
     align-items: center;
-    margin:35px 0;
-    height: 50px;
-    width:100%;
+    margin-bottom:35px;
+    /* width:100%; */
 } 
 
 .filters-container h2{
-    display:flex;  
     font-size: 18px;
-    font-weight: 700;
-    /* text-align: center; */
-}                                                             
+    font-weight: 700;  
+}
 
 .filters-menu{
-    /* placer la liste ul dans une seule ligne avec un espace  de 15px entre les li*/
     display:flex;
     gap:15px;
 }
 
 .filters-menu li {
-    /*pour agencer les élements li au centre selon l'axe secondaire */
     display:flex;
     align-items: center;
-    list-style-type:none;/* pour enlever l'apparence de la puce d'un élément de liste*/
-    height: 50px;
+    list-style-type:none;
+    height: 50px; 
     padding: 4px 19px;
-    gap: 10px;
-    border-radius: 25px; /*permet de définir des coins arrondis pour la bordure d'un élément*/
-    border: 2px solid var(--grey-tint-2, #D9D9D9); /*définir les propriétés liées à la bordure*/
+    gap: 10px; 
+    border-radius: 25px;
+    border: 2px solid var(--grey-tint-2, #D9D9D9);
     font-size: 17px;
     font-weight: 700;
     
 }
+  
 .filters-menu li:hover{
-    background-color:var(--blue-light, #DEEBFF);/*le changement de
-    couleur de fond lors du survol.*/
+    /*le changement de couleur de fond lors du survol.*/
+    background-color:var(--blue-light, #DEEBFF);
 }
 
-/* placer les élements du bloc info-container les uns à coté des autres  */
 .info-container {
-    display:flex;
-    align-items: center;
-    height: 24px;
-    gap:10px;
+   /* display:flex;
+    align-items: center;*/
+    /* height: 24px; */
+    /* gap:10px; */
     margin-bottom:35px ;
-}
-
-.info-container p{
     font-size: 16px;
     font-weight: 400;
+}
+/*
+.info-container {
+    font-size: 16px;
+    font-weight: 400;
+}*/
+.info-container i{
+    margin-right: 10px;
 }
 
 .magnifying-glass{
     color:var(--white); 
 }
 
-/****** Hebergements And Populaires ***********/
+/****** Hebergements et Populaires ***********/
+
 .accommodations-and-popular {
     display: flex;
     justify-content: space-between;
@@ -279,104 +284,94 @@ nav ul{
 
 .accommodations-and-popular section {
     background-color: var(--main-bg-color);
-    border-radius: 20px; /*permet de définir des coins arrondis pour la bordure d'un élément*/
+    border-radius: 20px;
     padding: 30px;
-    box-sizing: border-box;/*indique au navigateur de prendre en compte la bordure et 
-    le remplissage dans la valeur définie pour la largeur et la hauteur*/
+    box-sizing: border-box;
 }
 
 /****** Hebergements ***********/
 
-.accommodations  { 
-   width: 65%;    
+.accommodations {
+    width: 65%;  
 }
 
 .accommodations-marseille-cards{
-   display: flex;
-   flex-direction: row; 
-   flex-wrap: wrap;
-   justify-content: space-between;
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;  
+    justify-content: space-between;
 }
 
-/*Chaque article occupe une largeur de 30% où
- les éléments du conteneur sont disposés en colonne**/
-.accommodations-marseille-cards .card{
-    display :flex;
-    flex-direction: column;
-    margin-top:30px;
+.accommodations-marseille-cards .card {   
+    display: flex;
+    flex-direction:column;
+    margin-top: 30px;  
     width:30%;
 }
 
-/*Chaque image occupe 100% de largeur avec un 
-hauteur de 124px*/
-.accommodations-marseille-cards img{
-    width:100%;
+.accommodations-marseille-cards img {
+    width: 100%; 
     height: 124px;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 0px 0px;  
 }
 
-/*pour mettre le contenu card-content en flex qui 
-permet d'agencer ces éléments en colonne*/
-
-.accommodations-marseille-cards .card-content{
-    display: flex;
-    flex-direction: column;  
-    justify-content: space-between;
-    box-sizing:border-box;
+.accommodations-marseille-cards .card-content{ 
     padding-left:5px; 
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing:border-box;        
+} 
 
-/*définir les marges pour card-title */
 .accommodations-marseille-cards .card-title {
     margin-top: 4px;
     margin-bottom: 8px;
 }
-
-/*définir les marges pour card-subtitle */
+  
 .accommodations-marseille-cards .card-subtitle {
-    margin: 8px 0 ;
+    margin: 8px 0 ; 
+ 
 }
 
-/*définir les marges pour card-rating */
 .accommodations-marseille-cards  .card-rating {
-    margin-bottom: 15px;   
+    margin-bottom: 15px; 
 }
-
+    
 .title-show-more .section-title{
     margin-top:30px;
 }
 
 /****** Populaires ***********/
-.most-popular  {
+.most-popular {
     width: 32%;
 }
 
 .most-popular-title {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .most-popular-cards .card {
     display: flex;
-    margin-top: 33px;
+    margin-top: 33px; 
+   
 }
 /*
 .card .most-popular-card-link{
     display: flex;
     flex-direction: row; 
-}*/
-
+}
+*/
 .most-popular-cards img {
-    width: 33%; /* l'image occupe 33 % de largeur*/
+    width: 33%;
     height: 136px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
 .most-popular-cards .card-content {
-    width: 67%;/*la description de chaque article dans
-     la section les plus populaires prend 67% de largeur*/
+    width: 67%;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -401,74 +396,68 @@ permet d'agencer ces éléments en colonne*/
     color: var(--grey);
 }
 
-
-
 /********Activités à Marseille************/
 
-.activities-marseille section {  
-    /*définir les marges de la section activités */  
-    padding: 30px;  
-    margin-top: 35px;
+.activities-marseille section {    
+    padding:30px;   
+    margin-top:35px;
 } 
 
 .activities-marseille-container {
-   /*afficher les éléments avec un espace égal entre eux*/ 
-   display: flex;
-   justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    gap:23px; 
+    /* gap:30px;  */
 }
 
 .activities-marseille-container .card {
-   /*chaque carte d'activité a une largeur de 23% 
-   où les Les éléments sont disposés de haut en bas (img+titre) */
     width: 23%;
     display: flex;
     flex-direction: column;
-    background-color: transparent; 
-    height:439px;
+    background-color: transparent;  
+    height:439px; 
 }
 
-
-.activities-marseille-container .card img {
-   width: 100%;
-   height:380px;  
-   border-radius: 20px 20px 0px 0px;
-   margin-bottom: -3px; 
+.activities-marseille-container .card  img {
+    width: 100%;
+    height:380px;  
+    border-radius: 20px 20px 0px 0px; 
+    margin-bottom: -3px;   
 }
 
 .activities-marseille-container .card .card-title{
     margin-top: 0px; 
-    padding: 20px 15px;
+    padding: 20px 19px; 
     border-radius: 0px 0px 20px 20px;
-    background: var(--white);
+    background: var(--white); 
     height: 40px;
-} 
+}
 
 .activities-marseille-section .section-title{
-   margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 /**************footer********************/
-
 .footer-container{
-   /*les éléments sont agencés horizontalement
-    avec le même distance 30px entre les rangées*/
-    display: flex;
-    gap:30px;
+    display: flex;   
 }
 
 .footer-column{
-    /*chaque footer-column occupe 33% du footer 
-    et ils sont placés verticalement*/ 
     display: flex;
     flex-direction: column;
-    width:33%;  
+    width:33%;
+    padding:20px;
 }
 
 .footer-ul li{
-    list-style-type:none; /* pour enlever l'apparence de la puce d'un élément de liste*/
+    list-style-type:none; 
     margin-bottom: 15px;   
     font-size:16px;
-    font-weight: 400;
+    font-weight: 400;  
+}
+
+.footer-ul a:hover{
+    color: var(--main-color);  
 }
 
 .footer-column h3{
@@ -484,107 +473,125 @@ permet d'agencer ces éléments en colonne*/
 /* Medium devices (tablets, less/equal than 1024px) */
 
 @media (max-width: 1024px) {
-    .filters-container,
-    .accommodations-and-popular{
-        flex-direction: column;
-    }   
 
-    /*Filtres*/  
-    .filters-container{
-      flex-direction: column; 
-      justify-content: center;
-      align-items: flex-start;
-    } 
-    
-    .filters-container h2{
-       margin-top:50px; 
-       margin-bottom:10px;   
-    }
+ /****Partie filtres***/ 
 
-    .filters-menu{
-       margin-left:-40px; 
-    }
+ .filters-container{
+   flex-direction: column;
+   /* justify-content: center;  */
+   /*Les éléments sont positionnés au début 
+   du container filters-container*/
+   align-items: flex-start;
+ } 
+ 
+ .filters-container h2{
+    margin-bottom:15px;  
+ }
+ 
+ .filters-menu{
+    /* pour corriger le déclage de la liste 
+    rapport au titre filtres*/
+    margin-left:-40px;  
+ }
 
-    .filters-menu li{
-       font-size:16px;
-       font-weight: 700;
-    }
+ .filters-menu li{
+    font-size:16px;
+ }
 
-    .info-container{
-       margin-top:70px ;
-    }
+ /****Hébergements*****/
+ .accommodations-and-popular{
+    flex-direction: column;
+ }
 
-    /*Hébergements*/
+ .accommodations {
+    width: 100%;
+  }
 
-    .accommodations {
-       width: 100%;
-     }
-   
-    .most-popular  {
-       width: 100%;
-       margin-top: 50px;  
-    }
+ .most-popular  {
+    width: 100%;
+    margin-top:50px;    
+ }
 
-    .most-popular-cards  {
-        display: flex;  
-        flex-direction: row; 
-        justify-content: space-between;
-    }
-   
-    .most-popular-cards .card {
-        width: 30%;  
-    }
+ .most-popular-cards {
+    /* placer les articles sur l'axe horizontale ,
+    ils sont étirés sur tout l'axe
+    avec un espace de 20px   */
+    display: flex;   
+    flex-direction:row; 
+    justify-content:space-between;
+    gap:20px;
+ }
 
-    .card-title {
-        font-size: 14px;
-    }
+ .most-popular-title {
+    margin-bottom: 20px;  
+ }
 
-    .card-subtitle {
-        font-size: 13px;
-    }
+ .most-popular-cards .card {
+    width: 30%; 
+    margin-top:0px
+ }
 
-   /*Activités à Marseille*/
+ .card-title {
+    font-size: 14px;
+ }
 
-    .activities-marseille-container  {
-        gap:15px;
-    }
+ .card-subtitle {
+    font-size: 13px;
+ }
 
-    .activities-marseille-container .card img{
-       height:200px;        
-    }
+/*****Activités à Marseille******/
 
-    .activities-marseille-container  .card {
-        height:270px;       
-    } 
-       
-   }
-   
+ .activities-marseille-container .card img{
+    height:200px;     
+ }
+
+ .activities-marseille-container  .card {
+    height:270px; 
+ }
+
+ /*footer*/
+
+ .footer-container{
+    gap:30px;
+ } 
+
+
+}
 
 /* Small devices (phones, less than 768px) */
 @media screen and (min-width: 320px) and (max-width: 767.98px) {
+   
     .main-container {
-        padding: 0px 10px ;   
+        /*pas de marge intérieure entre
+         main-container et ses propres limites*/
+        padding: 0px;
     }
- 
+
+    /* Entête du site (le logo+le menu de navigation)*/  
     header{
         flex-direction: column;
     }
 
     #logo-container{
+    /*display: flex;
+        justify-content: center; */
         margin:auto;
     }
 
     nav ul {
-        display: flex;
         justify-content: space-between;
         width: 100%; 
         border-bottom: 1px solid #F2F2F2;
         padding-bottom: 10px; 
         padding: 0px; 
-        margin:0px;  
+        margin:0px;
+        
     }
        
     .menu li:hover{
+        /*apparaitre sur les li un bordure 
+        en dessous au moment où l'utilisateur
+        le survole avec le pointeur */
         width:50%;
         border-bottom: 2px solid #0065FC;
         padding-bottom: 15px;
@@ -592,15 +599,25 @@ permet d'agencer ces éléments en colonne*/
 
     .menu li a:hover{  
         color: var(--main-color); 
-        border-top:0;
+        border-top:0;/*supprimer la bordure*/
     }
 
   /*****Recherche*****/
+    .research-section,
+    .filters-section {
+      padding: 0px 13px; 
+      /* padding:0px 20px;  */
+    }
+
     .research-button{
         display: none;
     }
-
+ 
     .res-button-magnifying-glass{
+        /* bouton loupe se comporte comme 
+        un élément en ligne et dispose 
+        son contenu(icone) selon le modèle 
+        flexbox*/
         display: inline-flex;
         align-items: center;
         gap: 10px;
@@ -613,92 +630,97 @@ permet d'agencer ces éléments en colonne*/
 
     .research-input{
         border-right: 0;
-    } 
+    }
+
+   
 
 /*****filtres*******/
-
-@media screen and (max-width: 637.5px) {
-
-    .filters-container h2{
-        margin-top:170px;  
-    }
-    
-    .info-container{
-         margin-top:190px; 
-         
-    }
-}
 
     .filters-menu{
         flex-direction: row;
         flex-wrap: wrap;
-       /* margin-right: 16px;  */
+        gap:10px;
     }
 
     .filters-menu li {
-        font-size: 14px;  
+        font-size: 13px;  
     }
 
+    .filters-menu li:nth-child(2){
+       padding:4px 30px;
+    }
 /***********hébergements **********/
     .accommodations-and-popular{
-        
         flex-direction: column-reverse;
-        padding : 0px;
-        margin-top: -30px; 
-    
+    }
+
+    .accommodations-and-popular .accommodations{
+        padding: 20px;
+        margin-top:15px; 
     }
 
     .accommodations-and-popular section{
-        background-color: transparent;   
+        background-color: transparent; 
     }
-    .most-popular-cards{
     
-        flex-direction: column;
+    .most-popular-title {
+        margin-bottom: 15px;
     }
-    .most-popular-cards .card{
-        width:100%;
+
+    .most-popular-cards{
+        flex-direction: column;
+        gap:15px;
+    }  
+
+    .most-popular-cards .card {
+        width:95%;
     }
 
     .accommodations-and-popular .most-popular {
-        background: var(--main-bg-color);
-        border-radius: 0;
+        background-color: var(--main-bg-color);
+        border-radius:0;
+        margin-top: 0px; 
+        padding: 30px 20px;    
     }
-
-
+   
     .accommodations-marseille-cards{
-        
         flex-direction: column;
+        gap:15px;
+        margin-top:15px ; 
     }
     .accommodations-marseille-cards .card{
-        width:100%;
-    }   
-
-    .title-show-more .section-title {
-        margin-top: 15px;
+        width:95%; 
+        margin-top:0px;
     }
 
-    /*Activités */ 
-    .activities-marseille section{
-        margin-top: -20px;
-    }
+    /*Activités */
 
     .activities-marseille-container{
         flex-direction: column;
-        
+        gap:15px;
     }
 
     .activities-marseille-container .card{
         width: 100%;
-        padding-bottom:15px ; 
     }
 
-   .footer-container{
+    .activities-marseille-container .card .card-title {
+        height: 20px;
+    }
+
+    /**footer**/
+    
+    .footer-container{
         flex-direction: column;
+        gap:50px; 
+        padding:30px;
     }
 
     .footer-column{
         width:100%;
-        margin-bottom: -20px; 
+        padding:0px;
     }
-
+    
 }
+
+
